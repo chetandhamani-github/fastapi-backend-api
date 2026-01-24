@@ -55,7 +55,7 @@ class UserAuthService(IUserAuthService):
         if not verify_password(
             plain_password=user_to_login.password, hashed_password=user.password_hash
         ):
-            logger.error("Incorrect password", user_id=user_to_login.email)
+            logger.error("Incorrect password", email=user_to_login.email)
             raise IncorrectLoginInputException()
 
         jwt_token = self._auth_token_service.generate_jwt_token(user=user)
