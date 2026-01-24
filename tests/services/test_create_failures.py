@@ -82,9 +82,7 @@ async def test_article_create_raises_create_exception() -> None:
     )
     with pytest.raises(ArticleCreateException):
         await service.create_new_article(
-            session=None,
-            author_id=1,
-            article_to_create=create_article_dto,
+            session=None, author_id=1, article_to_create=create_article_dto
         )
 
 
