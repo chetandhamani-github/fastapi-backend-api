@@ -1,13 +1,13 @@
 import abc
 from typing import Any
 
-from conduit.domain.dtos.article import (
+from conduit.dtos.article import (
     ArticleDTO,
     ArticlesFeedDTO,
     CreateArticleDTO,
     UpdateArticleDTO,
 )
-from conduit.domain.dtos.user import UserDTO
+from conduit.dtos.user import UserDTO
 
 
 class IArticleService(abc.ABC):

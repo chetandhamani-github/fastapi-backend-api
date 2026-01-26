@@ -15,12 +15,12 @@ from conduit.core.config import get_app_settings
 from conduit.core.container import Container
 from conduit.core.dependencies import IArticleService, IAuthTokenService
 from conduit.core.settings.base import BaseAppSettings
-from conduit.domain.dtos.article import ArticleDTO, CreateArticleDTO
-from conduit.domain.dtos.user import CreateUserDTO, UserDTO
-from conduit.domain.repositories.article import IArticleRepository
-from conduit.domain.repositories.user import IUserRepository
-from conduit.domain.services.user import IUserService
+from conduit.dtos.article import ArticleDTO, CreateArticleDTO
+from conduit.dtos.user import CreateUserDTO, UserDTO
 from conduit.infrastructure.models import Base
+from conduit.interfaces.repositories.article import IArticleRepository
+from conduit.interfaces.repositories.user import IUserRepository
+from conduit.interfaces.services.user import IUserService
 
 SetupFixture: TypeAlias = None
 

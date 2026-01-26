@@ -1,9 +1,9 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from conduit.domain.dtos.tag import TagRecordDTO
-from conduit.domain.repositories.tag import ITagRepository
+from conduit.dtos.tag import TagRecordDTO
 from conduit.infrastructure.models import Tag
+from conduit.interfaces.repositories.tag import ITagRepository
 
 
 class TagRepository(ITagRepository):

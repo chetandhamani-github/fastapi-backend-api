@@ -5,9 +5,9 @@ from sqlalchemy import insert, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from conduit.core.exceptions import UserNotFoundException
-from conduit.domain.dtos.user import CreateUserRecordDTO, UpdateUserRecordDTO, UserDTO
-from conduit.domain.repositories.user import IUserRepository
+from conduit.dtos.user import CreateUserRecordDTO, UpdateUserRecordDTO, UserDTO
 from conduit.infrastructure.models import User
+from conduit.interfaces.repositories.user import IUserRepository
 
 
 class UserRepository(IUserRepository):

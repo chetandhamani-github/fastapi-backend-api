@@ -4,8 +4,8 @@ from sqlalchemy import delete, exists, insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql.functions import count
 
-from conduit.domain.repositories.favorite import IFavoriteRepository
 from conduit.infrastructure.models import Favorite
+from conduit.interfaces.repositories.favorite import IFavoriteRepository
 
 
 class FavoriteRepository(IFavoriteRepository):

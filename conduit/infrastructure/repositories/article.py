@@ -12,13 +12,12 @@ from conduit.core.utils.slug import (
     make_slug_from_title,
     make_slug_from_title_and_code,
 )
-from conduit.domain.dtos.article import (
+from conduit.dtos.article import (
     ArticleFeedRecordDTO,
     ArticleRecordDTO,
     CreateArticleDTO,
     UpdateArticleDTO,
 )
-from conduit.domain.repositories.article import IArticleRepository
 from conduit.infrastructure.models import (
     Article,
     ArticleTag,
@@ -27,6 +26,7 @@ from conduit.infrastructure.models import (
     Tag,
     User,
 )
+from conduit.interfaces.repositories.article import IArticleRepository
 
 # Aliases for the models if needed.
 FavoriteAlias = aliased(Favorite)

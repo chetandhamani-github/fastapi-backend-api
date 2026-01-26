@@ -4,9 +4,9 @@ from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from conduit.domain.dtos.tag import TagRecordDTO
-from conduit.domain.repositories.article_tag import IArticleTagRepository
+from conduit.dtos.tag import TagRecordDTO
 from conduit.infrastructure.models import ArticleTag, Tag
+from conduit.interfaces.repositories.article_tag import IArticleTagRepository
 
 
 class ArticleTagRepository(IArticleTagRepository):

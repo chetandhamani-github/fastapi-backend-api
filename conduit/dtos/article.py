@@ -1,8 +1,6 @@
 import datetime
 from dataclasses import dataclass, replace
 
-from conduit.domain.dtos.profile import ProfileDTO
-
 
 @dataclass(frozen=True)
 class ArticleRecordDTO:

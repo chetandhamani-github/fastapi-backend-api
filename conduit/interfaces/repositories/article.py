@@ -1,7 +1,7 @@
 import abc
 from typing import Any
 
-from conduit.domain.dtos.article import (
+from conduit.dtos.article import (
     ArticleFeedRecordDTO,
     ArticleRecordDTO,
     CreateArticleDTO,

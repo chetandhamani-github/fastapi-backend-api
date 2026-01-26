@@ -1,8 +1,8 @@
 import abc
 from typing import Any
 
-from conduit.domain.dtos.profile import ProfileDTO
-from conduit.domain.dtos.user import UserDTO
+from conduit.dtos.profile import ProfileDTO
+from conduit.dtos.user import UserDTO
 
 
 class IProfileService(abc.ABC):

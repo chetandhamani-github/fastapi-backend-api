@@ -2,12 +2,7 @@ import abc
 from collections.abc import Collection
 from typing import Any
 
-from conduit.domain.dtos.user import (
-    CreateUserDTO,
-    UpdatedUserDTO,
-    UpdateUserDTO,
-    UserDTO,
-)
+from conduit.dtos.user import CreateUserDTO, UpdatedUserDTO, UpdateUserDTO, UserDTO
 
 
 class IUserService(abc.ABC):

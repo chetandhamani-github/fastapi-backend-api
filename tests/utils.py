@@ -1,9 +1,9 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from conduit.domain.dtos.article import ArticleRecordDTO, CreateArticleDTO
-from conduit.domain.dtos.user import CreateUserDTO, UserDTO
-from conduit.domain.services.user import IUserService
+from conduit.dtos.article import ArticleRecordDTO, CreateArticleDTO
+from conduit.dtos.user import CreateUserDTO, UserDTO
 from conduit.infrastructure.repositories.article import ArticleRepository
+from conduit.interfaces.services.user import IUserService
 
 
 async def create_another_test_user(

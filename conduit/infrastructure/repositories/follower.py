@@ -3,8 +3,8 @@ from datetime import datetime
 from sqlalchemy import delete, exists, insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from conduit.domain.repositories.follower import IFollowerRepository
 from conduit.infrastructure.models import Follower
+from conduit.interfaces.repositories.follower import IFollowerRepository
 
 
 class FollowerRepository(IFollowerRepository):

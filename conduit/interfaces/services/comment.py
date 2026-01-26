@@ -1,8 +1,8 @@
 import abc
 from typing import Any
 
-from conduit.domain.dtos.comment import CommentDTO, CommentsListDTO, CreateCommentDTO
-from conduit.domain.dtos.user import UserDTO
+from conduit.dtos.comment import CommentDTO, CommentsListDTO, CreateCommentDTO
+from conduit.dtos.user import UserDTO
 
 
 class ICommentService(abc.ABC):

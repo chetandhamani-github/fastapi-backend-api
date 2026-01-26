@@ -15,7 +15,7 @@ from conduit.core.providers import (
     get_user_service,
 )
 from conduit.core.security import HTTPTokenHeader
-from conduit.domain.dtos.user import UserDTO
+from conduit.dtos.user import UserDTO
 from conduit.services.article import ArticleService
 from conduit.services.auth import UserAuthService
 from conduit.services.auth_token import AuthTokenService

@@ -1,8 +1,8 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from conduit.domain.dtos.tag import TagDTO, TagRecordDTO
-from conduit.domain.repositories.tag import ITagRepository
-from conduit.domain.services.tag import ITagService
+from conduit.dtos.tag import TagDTO, TagRecordDTO
+from conduit.interfaces.repositories.tag import ITagRepository
+from conduit.interfaces.services.tag import ITagService
 
 
 class TagService(ITagService):

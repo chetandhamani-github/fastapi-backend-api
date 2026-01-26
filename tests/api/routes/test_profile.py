@@ -3,8 +3,8 @@ from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from conduit.api.schemas.responses.profile import ProfileResponse
-from conduit.domain.dtos.user import UserDTO
-from conduit.domain.services.user import IUserService
+from conduit.dtos.user import UserDTO
+from conduit.interfaces.services.user import IUserService
 from tests.utils import create_another_test_user
 
 

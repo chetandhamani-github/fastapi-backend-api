@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from conduit.domain.dtos.article import CreateArticleDTO, UpdateArticleDTO
+from conduit.dtos.article import CreateArticleDTO, UpdateArticleDTO
 
 
 class ArticlesPagination(BaseModel):

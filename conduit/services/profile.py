@@ -8,11 +8,11 @@ from conduit.core.exceptions import (
     ProfileNotFoundException,
     UserNotFoundException,
 )
-from conduit.domain.dtos.profile import ProfileDTO
-from conduit.domain.dtos.user import UserDTO
-from conduit.domain.repositories.follower import IFollowerRepository
-from conduit.domain.services.profile import IProfileService
-from conduit.domain.services.user import IUserService
+from conduit.dtos.profile import ProfileDTO
+from conduit.dtos.user import UserDTO
+from conduit.interfaces.repositories.follower import IFollowerRepository
+from conduit.interfaces.services.profile import IProfileService
+from conduit.interfaces.services.user import IUserService
 
 logger = get_logger()
 

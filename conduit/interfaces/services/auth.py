@@ -1,7 +1,7 @@
 import abc
 from typing import Any
 
-from conduit.domain.dtos.user import (
+from conduit.dtos.user import (
     CreatedUserDTO,
     CreateUserDTO,
     LoggedInUserDTO,

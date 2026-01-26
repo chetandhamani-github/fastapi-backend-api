@@ -2,7 +2,7 @@ import abc
 from collections.abc import Collection, Mapping
 from typing import Any
 
-from conduit.domain.dtos.user import CreateUserRecordDTO, UpdateUserRecordDTO, UserDTO
+from conduit.dtos.user import CreateUserRecordDTO, UpdateUserRecordDTO, UserDTO
 
 
 class IUserRepository(abc.ABC):
