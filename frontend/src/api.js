@@ -29,7 +29,17 @@ async function request(endpoint, options = {}) {
     return null;
   }
 
-  const data = await response.json();
+  const text = await response.text();
+  let data = null;
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch {
+    if (!response.ok) {
+      throw new Error(text || `Server error (${response.status})`);
+    }
+    return null;
+  }
+
   if (!response.ok) {
     const errorMsg = data.errors
       ? Object.entries(data.errors)

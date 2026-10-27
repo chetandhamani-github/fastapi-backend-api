@@ -11,7 +11,7 @@ class UserBaseData(BaseModel):
     email: str
     username: str
     bio: str
-    image: str
+    image: str | None = None
     token: str
 
 

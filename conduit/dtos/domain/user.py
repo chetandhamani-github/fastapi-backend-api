@@ -9,8 +9,8 @@ class UserDTO:
     email: str
     password_hash: str
     bio: str
-    image: str
     created_at: datetime.datetime
+    image: str | None = None
 
 
 @dataclass(frozen=True)
@@ -19,7 +19,7 @@ class UpdatedUserDTO:
     email: str
     username: str
     bio: str
-    image: str
+    image: str | None = None
 
 
 @dataclass(frozen=True)
