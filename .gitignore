@@ -1,7 +1,10 @@
 .ve
+venv/
+.venv/
+env/
 .idea
 .DS_Store
-__pycache__
+__pycache__/
 *.pyc
 .env
 .env.dev
@@ -9,5 +12,20 @@ __pycache__
 .env.local
 .vscode
 .coverage
+.pytest_cache/
+htmlcov/
 google_credentials.json
 ./test.py
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+local_database.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+

@@ -24,8 +24,22 @@ from conduit.infrastructure.models import (
 )
 from conduit.interfaces.repositories.article import IArticleRepository
 
+from sqlalchemy.ext.compiler import compiles
+from sqlalchemy.sql import functions
+
 # Aliases for the models if needed.
 FavoriteAlias = aliased(Favorite)
+
+
+class string_agg(functions.GenericFunction):
+    inherit_cache = True
+
+
+@compiles(string_agg, "sqlite")
+def _compile_string_agg(element: Any, compiler: Any, **kw: Any) -> Any:
+    return compiler.visit_function(
+        functions.Function("group_concat", *element.clauses)
+    )
 
 
 class ArticleRepository(IArticleRepository):

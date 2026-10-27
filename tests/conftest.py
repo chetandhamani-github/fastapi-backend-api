@@ -7,6 +7,7 @@ import pytest
 from fastapi import FastAPI
 from httpx import AsyncClient
 from sqlalchemy import create_engine
+from sqlalchemy.engine import make_url
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy_utils import create_database, database_exists, drop_database
 
@@ -37,7 +38,12 @@ def check_app_env_mode_enabled() -> None:
 
 @pytest.fixture(scope="session")
 def create_test_db(settings: BaseAppSettings) -> Generator[None, None, None]:
-    test_db_sql_uri = settings.sql_db_uri.set(drivername="postgresql")
+    url = make_url(str(settings.sql_db_uri))
+    if "sqlite" in url.drivername:
+        yield
+        return
+
+    test_db_sql_uri = url.set(drivername="postgresql")
 
     if database_exists(url=test_db_sql_uri):
         drop_database(url=test_db_sql_uri)
@@ -50,10 +56,15 @@ def create_test_db(settings: BaseAppSettings) -> Generator[None, None, None]:
 
 @pytest.fixture(autouse=True)
 def create_tables(settings: BaseAppSettings) -> Generator[None, None, None]:
-    engine = create_engine(
-        url=settings.sql_db_uri.set(drivername="postgresql"),
-        isolation_level="AUTOCOMMIT",
-    )
+    url = make_url(str(settings.sql_db_uri))
+    if "sqlite" in url.drivername:
+        sync_url = str(url).replace("sqlite+aiosqlite:", "sqlite:")
+        engine = create_engine(url=sync_url)
+    else:
+        engine = create_engine(
+            url=url.set(drivername="postgresql"),
+            isolation_level="AUTOCOMMIT",
+        )
     Base.metadata.create_all(bind=engine)
     yield
 

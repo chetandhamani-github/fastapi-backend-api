@@ -23,9 +23,11 @@ class TestAppSettings(AppSettings):
     @computed_field  # type: ignore
     @property
     def sqlalchemy_engine_props(self) -> dict:
-        return dict(
+        props = dict(
             url=self.sql_db_uri,
             echo=False,
             poolclass=NullPool,
-            isolation_level="AUTOCOMMIT",
         )
+        if not str(self.sql_db_uri).startswith("sqlite"):
+            props["isolation_level"] = "AUTOCOMMIT"
+        return props

@@ -23,7 +23,7 @@ class UserRepository(IUserRepository):
                 username=create_item.username,
                 email=create_item.email,
                 password_hash=create_item.password_hash,
-                image="https://api.realworld.io/images/smiley-cyrus.jpeg",
+                image=None,
                 bio="",
                 created_at=datetime.now(),
             )
