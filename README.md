@@ -1,5 +1,6 @@
 # ⚡ Conduit — Full-Stack RealWorld Platform (FastAPI + React)
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-ngrok%20Tunnel-10b981?style=for-the-badge&logo=ngrok&logoColor=white)](https://clique-quill-deepen.ngrok-free.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.128-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -10,6 +11,10 @@
 [![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Pytest](https://img.shields.io/badge/Pytest-69%2B%20Tests%20Passing-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
 
+> 🌐 **Live Public Deployment (ngrok):** **[https://clique-quill-deepen.ngrok-free.dev](https://clique-quill-deepen.ngrok-free.dev)**  
+> 📖 **Interactive Swagger API Playground:** **[https://clique-quill-deepen.ngrok-free.dev/docs](https://clique-quill-deepen.ngrok-free.dev/docs)**  
+> 📚 **ReDoc Documentation:** **[https://clique-quill-deepen.ngrok-free.dev/redoc](https://clique-quill-deepen.ngrok-free.dev/redoc)**
+
 > A production-grade, enterprise-architected full-stack implementation of the **[RealWorld (Conduit)](https://github.com/gothinkster/realworld)** specification. Designed and implemented with **Domain-Driven Design (DDD)**, **Clean Architecture**, asynchronous persistence via **SQLAlchemy 2.0**, and a responsive **React 18** client.
 
 ---
@@ -18,25 +23,25 @@
 
 ### 1. Global Feed & Interactive Web Application
 *Modern dark-mode UI with real-time tag filtering, pagination, article authoring, and social interactions.*
-![Conduit Frontend Feed](assets/screenshots/frontend_feed.png)
+![Conduit Frontend Feed](https://raw.githubusercontent.com/chetandhamani-github/fastapi-backend-api/main/assets/screenshots/frontend_feed.png)
 
 ---
 
-### 2. Interactive Swagger API Documentation (`/`)
+### 2. Interactive Swagger API Documentation (`/docs`)
 *Comprehensive OpenAPI 3.1 schema and interactive documentation for testing endpoints.*
-![Conduit Swagger API Docs](assets/screenshots/swagger_docs.png)
+![Conduit Swagger API Docs](https://raw.githubusercontent.com/chetandhamani-github/fastapi-backend-api/main/assets/screenshots/swagger_docs.png)
 
 ---
 
 ### 3. Article Reading & Comments Discussion
 *Full Markdown-rendered article reading view with user following, favorite toggles, and discussions.*
-![Conduit Frontend Article](assets/screenshots/frontend_article.png)
+![Conduit Frontend Article](https://raw.githubusercontent.com/chetandhamani-github/fastapi-backend-api/main/assets/screenshots/frontend_article.png)
 
 ---
 
 ### 4. Secure Authentication & User Identity
 *Bcrypt-hashed password verification and JWT-secured token authentication.*
-![Conduit Frontend Auth](assets/screenshots/frontend_auth.png)
+![Conduit Frontend Auth](https://raw.githubusercontent.com/chetandhamani-github/fastapi-backend-api/main/assets/screenshots/frontend_auth.png)
 
 ---
 

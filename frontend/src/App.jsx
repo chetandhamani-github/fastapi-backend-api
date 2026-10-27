@@ -17,6 +17,16 @@ import {
 } from 'lucide-react';
 import { api, setToken, getToken } from './api';
 
+const DEFAULT_AVATAR = "https://ui-avatars.com/api/?background=10b981&color=fff&name=User";
+
+const getAvatarUrl = (userOrAuthor) => {
+  if (userOrAuthor?.image && !userOrAuthor.image.includes('smiley-cyrus.jpeg')) {
+    return userOrAuthor.image;
+  }
+  const name = userOrAuthor?.username || 'User';
+  return `https://ui-avatars.com/api/?background=10b981&color=fff&name=${encodeURIComponent(name)}`;
+};
+
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const parseHash = () => {
@@ -125,9 +135,10 @@ export default function App() {
                   onClick={() => navigate('profile', { username: currentUser.username })}
                 >
                   <img 
-                    src={currentUser.image || "https://api.realworld.io/images/smiley-cyrus.jpeg"} 
+                    src={getAvatarUrl(currentUser)} 
                     alt={currentUser.username} 
                     className="nav-avatar"
+                    onError={(e) => { e.currentTarget.src = DEFAULT_AVATAR; }}
                   />
                   <span>{currentUser.username}</span>
                 </button>
@@ -316,9 +327,10 @@ function HomeView({ currentUser, navigate }) {
                       style={{ cursor: 'pointer' }}
                     >
                       <img 
-                        src={article.author.image || "https://api.realworld.io/images/smiley-cyrus.jpeg"} 
+                        src={getAvatarUrl(article.author)} 
                         alt={article.author.username} 
                         className="author-img"
+                        onError={(e) => { e.currentTarget.src = DEFAULT_AVATAR; }}
                       />
                       <div className="author-info">
                         <h4>{article.author.username}</h4>
@@ -501,9 +513,10 @@ function ArticleDetailView({ slug, currentUser, navigate }) {
               style={{ cursor: 'pointer' }}
             >
               <img 
-                src={article.author.image || "https://api.realworld.io/images/smiley-cyrus.jpeg"} 
+                src={getAvatarUrl(article.author)} 
                 alt={article.author.username} 
                 className="author-img"
+                onError={(e) => { e.currentTarget.src = DEFAULT_AVATAR; }}
               />
               <div className="author-info">
                 <h4>{article.author.username}</h4>
@@ -599,10 +612,11 @@ function ArticleDetailView({ slug, currentUser, navigate }) {
                   style={{ cursor: 'pointer' }}
                 >
                   <img 
-                    src={c.author.image || "https://api.realworld.io/images/smiley-cyrus.jpeg"} 
+                    src={getAvatarUrl(c.author)} 
                     alt={c.author.username} 
                     className="author-img"
                     style={{ width: 28, height: 28 }}
+                    onError={(e) => { e.currentTarget.src = DEFAULT_AVATAR; }}
                   />
                   <span style={{ fontSize: '0.88rem', fontWeight: 600 }}>{c.author.username}</span>
                   <time style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
@@ -1029,9 +1043,10 @@ function ProfileView({ username, currentUser, navigate }) {
     <div>
       <section className="profile-banner">
         <img 
-          src={profile.image || "https://api.realworld.io/images/smiley-cyrus.jpeg"} 
+          src={getAvatarUrl(profile)} 
           alt={profile.username} 
           className="profile-avatar-large"
+          onError={(e) => { e.currentTarget.src = DEFAULT_AVATAR; }}
         />
         <h2 style={{ fontSize: '1.9rem', marginBottom: '0.4rem' }}>{profile.username}</h2>
         {profile.bio && <p className="profile-bio">{profile.bio}</p>}
@@ -1079,9 +1094,10 @@ function ProfileView({ username, currentUser, navigate }) {
               <header className="article-header">
                 <div className="author-meta">
                   <img 
-                    src={article.author.image || "https://api.realworld.io/images/smiley-cyrus.jpeg"} 
+                    src={getAvatarUrl(article.author)} 
                     alt={article.author.username} 
                     className="author-img"
+                    onError={(e) => { e.currentTarget.src = DEFAULT_AVATAR; }}
                   />
                   <div className="author-info">
                     <h4>{article.author.username}</h4>
