@@ -42,6 +42,12 @@ class BaseAppSettings(BaseSettings):
         url = self.database_url
         # Convert sync driver URLs to async equivalents.
         if url.startswith("sqlite:"):
+            if "///." in url or "//." in url:
+                from pathlib import Path
+                root_dir = Path(__file__).resolve().parents[3]
+                rel_path = url.split("sqlite://", 1)[1].lstrip("/")
+                db_path = (root_dir / rel_path).resolve().as_posix()
+                return f"sqlite+aiosqlite:///{db_path}"
             return url.replace("sqlite:", "sqlite+aiosqlite:", 1)
         if url.startswith("postgresql:"):
             return url.replace("postgresql:", "postgresql+asyncpg:", 1)

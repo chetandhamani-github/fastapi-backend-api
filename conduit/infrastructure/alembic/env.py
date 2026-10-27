@@ -23,7 +23,11 @@ target_metadata = Base.metadata
 
 
 def _run_sync_migrations(connection: Connection) -> None:
-    context.configure(connection=connection, target_metadata=target_metadata)
+    context.configure(
+        connection=connection,
+        target_metadata=target_metadata,
+        render_as_batch=True,
+    )
     with context.begin_transaction():
         context.run_migrations()
 
@@ -39,6 +43,7 @@ async def run_migrations_online() -> None:
 
     async with connectable.connect() as connection:
         await connection.run_sync(_run_sync_migrations)
+        await connection.commit()
 
     await connectable.dispose()
 
